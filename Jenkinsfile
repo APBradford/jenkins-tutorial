@@ -25,7 +25,7 @@ pipeline{
                     sh '''
                         cd chaperootodo_client
                         export DB_PASSWORD=password
-                        sudo docker-compose pull && sudo -E DB_PASSWORD=${DB_PASSWORD} docker-compose up -d.
+                        sudo docker-compose pull && sudo -E DB_PASSWORD=${DB_PASSWORD} docker-compose up -d
                     '''
             }
         }
