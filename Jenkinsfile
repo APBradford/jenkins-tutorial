@@ -23,7 +23,9 @@ pipeline{
             stage('Deploy App'){
                 steps{
                     sh '''
-                        sudo docker-compose pull && sudo -E DB_PASSWORD=pass docker-compose up -d.
+                        ls
+                        export DB_PASSWORD=password
+                        sudo docker-compose pull && sudo -E DB_PASSWORD=${DB_PASSWORD} docker-compose up -d.
                     '''
             }
         }
