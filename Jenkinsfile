@@ -1,10 +1,13 @@
 pipeline{
         agent any
+        environment{
+                WorkingDir = fileExists '/chaperootodo_client/'
+        }
         stages{
             stage('Clone Directory'){
+                when { expression {WorkingDir = 'false'} }
                 steps{
                     sh '''
-                       rm -rf chaperootodo_client
                        git clone https://gitlab.com/qacdevops/chaperootodo_client.git
                     '''
                 }
