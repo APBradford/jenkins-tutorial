@@ -8,7 +8,6 @@ pipeline{
                        git clone https://gitlab.com/qacdevops/chaperootodo_client.git
                     '''
                 }
-              }
             }
             stage('Install Docker and Docker-Compose'){
                 steps{
@@ -27,3 +26,5 @@ pipeline{
             }
         }
     }
+}
+        
